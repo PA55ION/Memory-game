@@ -5,50 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Memory Game</title>
 </head>
 
 <body>
-    <h1>Memory Game</h1>
-    <button class='newGame'>New Game</button>
+        <h1 class="page-title">Memory Game</h1>
 
-    <button class='Reset'>Reset</button>
-    <section class='memory-game'>
-        <div class=''>
-            <img class='font-face' src="img/Brain.svg" alt="Brain">
-            <img class='back-face' src="img/Eye.svg" alt="Eye">
-        </div>
-        <div class=''>
-            <img class='font-face' src="img/Robot_2.svg" alt="Robot_2">
-            <img class='back-face' src="img/Eye.svg" alt="Eye">
-        </div>
-        <div class=''>
-            <img class='font-face' src="img/Cloud_1.svg" alt="cloud">
-            <img class='back-face' src="img/Eye.svg" alt="Eye">
-        </div>
-        <div class=''>
-            <img class='font-face' src="img/Robot_3.svg" alt="Robot_3">
-            <img class='back-face' src="img/Eye.svg" alt="Eye">
-        </div>
-        <div class=''>
-            <img class='font-face' src="img/Brain.svg" alt="Brain">
-            <img class='back-face' src="img/Eye.svg" alt="Eye">
-        </div>
-        <div class=''>
-            <img class='font-face' src="" alt="brain">
-            <img class='back-face' src="" alt="cloud">
-        </div>
-        <div class=''>
-            <img class='font-face' src="" alt="">
-            <img class='back-face' src="" alt="">
-        </div>
-        <div class=''>
-            <img class='font-face' src="" alt="">
-            <img class='back-face' src="" alt="">
-        </div>
+    <div class="game-container">
+        <div class="game-info">Time <span id="timer">100</span></div>
+        <div class="game-info">Flips <span id="flip">0</span></div>
 
-    </section>
-    <script src="memoryGame.js"></script>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/autumn flat-01.png" alt="honey">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="#" >
+        </div>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/autumn flat-01.png" alt="honey">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="#">
+        </div>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/autumn flat-03.png" alt="pumpkin">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="#" >
+        </div>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/autumn flat-03.png" alt="pumpkin">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="#">
+        </div>
+        <!-- <div class="memory-cards">
+            <img class="font-face card-face" src="img/autumn flat-05.png" alt="mushroom">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="#">
+        </div>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/autumn flat-05.png" alt="mushroom">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="#">
+        </div> -->
+        <div class="memory-cards">
+                        <img class='font-face' src="img/Tropical Icon_Linear Color_Expand-09.png" alt="#">
+                        <img class="back-face" src="img/autumn flat-44.png" alt="#">
+                    </div>
+                    <div class="memory-cards">
+                        <img class='font-face' src="img/Tropical Icon_Linear Color_Expand-09.png" alt="#">
+                        <img class="back-face" src="img/autumn flat-44.png" alt="#">
+                    </div>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/autumn flat-16.png" alt="cloud">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="#">
+        </div>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/autumn flat-16.png" alt="cloud">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="#">
+        </div>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/Tropical Icon_Linear Color_Expand-11.png" alt="bird">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="bones">
+        </div>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/Tropical Icon_Linear Color_Expand-11.png" alt="bird">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="bones">
+        </div>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/Tropical Icon_Linear Color_Expand-23.png" alt="#">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="bones" >
+        </div>
+        <div class="memory-cards">
+            <img class="font-face card-face" src="img/Tropical Icon_Linear Color_Expand-23.png" alt="#">
+            <img class="back-face card-face" src="img/autumn flat-44.png" alt="bones" >
+        </div>
+    </div>
+</div>
+
+    <script src="memoryGame.js"></script 
 </body>
 
 </html>

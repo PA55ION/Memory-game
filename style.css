@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+* { 
+    margin: 0;
+    padding: 0;  
+    cursor: pointer;
+}
+
+.page-title {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    margin: 30px;
+    font-size: 50px;
+    color: #30E8BF;
+}
+
+body {
+    background: grey;
+    border: 1px solid #30E8BF;
+}
+
+
+.game-container {
+    max-width: 600px;
+    max-height: 600px;
+    margin: 0 auto;
+    
+    /* position: relative;  
+    display: grid;
+     float: left; */
+    /* grid-template-areas:     
+    'font-face font-face font-face font-face'        
+    'back-face back-face back-face back-face';  */
+    /* grid-template-columns: repeat(4, 200px); 
+    grid-template-rows: repeat(4, 15px);
+     grid-gap: 10px;
+     margin-top: 50px;  
+     border: 3px solid black; 
+   */
+}
+
+.game-info {
+    color: #30E8BF;
+    font-size: 2em;
+    font-family: 'Lobster', cursive;
+    margin: 100px;
+    display: inline; 
+   
+}
+
+.memory-cards {
+    display: grid; 
+    padding: 20px;
+    width: 15%;
+    grid-template-columns: repeat(4, 200px);  
+    grid-template-rows: repeat(4, 1px); 
+    grid-gap: 12px;
+    margin-top: 50px; 
+    float: left; 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
+      
+}
+
+.font-face {
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+   
+}
+
+.back-face {
+    z-index: 3;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+
+}
+.font-face,
+.back-face {
+    position: absolute;
+    border-radius: 25px;
+    padding: 10px;
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}  
+
+.back-face:hover {
+    background: #30E8BF;
+    background: -webkit-linear-gradient(to right, #FF8235, #30E8BF);
+    /*Chrome10-25,Safari5.1-6*/background: linear-gradient(to right, #FF8235, #30E8BF);
+    /*W3C,IE10+/Edge,Firefox16+,Chrome26+,Opera12+,Safari7+*/box-shadow: 3px 3px 5px 6px #ccc;
+}
