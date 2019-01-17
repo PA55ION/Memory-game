@@ -1,38 +1,32 @@
-let cards = document.getElementsByClassName('memory-cads');
-let flip = document.getElementById('flip');
-let timer = document.getElementById('timer');
-let incrementClick = 0;
+let cards = document.querySelectorAll('.memory-cards');
+let isFlipped = false;
+let firstCard, secondCard;
 
 
-class Timer {
-    constructor(totalTime, cards) {
-        this.cards = cards;
-        this.totalTime = totalTime;
-        this.timeRemaining = totalTime;
-        this.timer = document.getElementById('timer');
-        this.ticker = document.getElementById('flip');
-    }
-    startGame() {
-        this.cardToCheck = null;
-        this.totalClick = 0;
-        this.timeRemaining = this.totalTime;
-        this.matchedCards = [];
-        this.busy = true;
-    }
-}
+
 
 function flipCard() {
     this.classList.toggle('flip');
-    cards.forEach(card => card.addEventListener('click', flipCard));
-    cards.addEventListener('click', alert('You click me'));
+
+    if(isFlipped) {
+        this.classList.add('flip');
+        isFlipped = false;
+    } else {
+        this.classList.remove('flip');
+        isFlipped = true;
         
-    // cards.onclick = function() {
-    //     incrementClick += 1;
-    //     flip.innerHTML = incrementClick;
-    //    }
+     console.log({firstCard, secondCard});
+    }
+    
 }
 
+cards.forEach(card => card.addEventListener('click', flipCard));
+
+// overlays.forEach(overlay => {
+//     overlay.addEventListener('click', () => {
+//         overlay.classList.remove('visible');
+//         game.startGame();
+//     });
+// });
 
 
-let today = new Date();
-const minute = today.minute();
