@@ -1,17 +1,53 @@
 @import url('https://fonts.googleapis.com/css?family=Coiny');
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  font-family: 'Coiny', cursive;
+  height: 100vh;
+  background: grey;
+  grid-template-columns: 100%;
+  
+}
+
+.container {
+  text-align:center; 
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.page-title {
+  color: #30e8bf;
+  font-size: 45px;
+  text-align: center;
+ 
+}
+.game-info {
+  color: #30e8bf;
+  font-size: 2em;
+  display: inline-block;
+  padding-left: 150px;
+  padding-right: 150px;
+  text-align: center;
+}
+
 /* .overlay-text {
   display: none;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   bottom: 0;
-  justify-content: center;
   align-items: center;
-  z-index: 100;
+  justify-content: center;
+  font-family: Coiny, serif;
   color: #30e8bf;
-  font-family: Lobster, serif;
+  z-index: 100;
 }
 
 .overlay-text-small {
@@ -21,53 +57,20 @@
 .overlay-text.visible {
   display: flex;
   flex-direction: column;
-  animation: overlay-grow 500ms forwards;
+  animation: overlay-grow 500ms forward;
+  -webkit-animation: overlay-grow 500ms forwards;
 }
 
 @keyframes overlay-grow {
   from {
-    background-color: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
     font-size: 0;
   }
   to {
-    background-color: rgba(0, 0, 0, .8);
+    background: rgba(0, 0, 0, .8);
     font-size: 10em;
   }
-} */
-
-*  {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  width: 100%;
-  height: auto;
-  font-family: 'Coiny', cursive;
-  height: 100vh;
-  background: grey;
-
-}
-
-.container {
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 15px;
-}
-
-.page-title {
-  color: #30e8bf;
-  font-size: 45px;
-}
-
-.game-info {
-  color: #30e8bf;
-  font-size: 2em;
-  display: inline;
-  padding: 100px;
-  
-}
+}  */
 
 .game-info-container {
   grid-column: 1 / -1;
@@ -75,12 +78,11 @@ body {
   justify-content: space-between;
 }
 
-
 .game-container {
   width: 640px;
   height: 640px;
   border: 2px solid aquamarine;
-  margin: 0 auto;
+   margin: 0 auto; 
 }
 
 .card {
@@ -89,7 +91,7 @@ body {
   display: flex;
   perspective: 1000px; 
   flex-wrap: wrap; 
-  margin: auto;
+  margin: 0 auto;
 }
 
 .memory-cards {
@@ -100,8 +102,6 @@ body {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .5s; 
-
- 
 }
 
 .memory-cards:active {
@@ -115,10 +115,10 @@ body {
 }
 
 .front-face, .back-face {
-  background: #3C3B3F;
-  /*fallbackforoldbrowsers*/background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);
-  /*Chrome10-25,Safari5.1-6*/background: linear-gradient(to right, #605C3C, #3C3B3F);
-  /*W3C,IE10+/Edge,Firefox16+,Chrome26+,Opera12+,Safari7+*/border: 1px solid lightblue;
+  background: #232526; 
+  background: -webkit-linear-gradient(to right, #414345, #232526); 
+  background: linear-gradient(to right, #414345, #232526); 
+  border: 1px solid lightblue;
   border-radius: 15px;
   position: absolute;
   width: 100%;
@@ -138,14 +138,28 @@ body {
 .back-face:hover {
   background-position: right center;
   background: #EECDA3;
-  /*fallbackforoldbrowsers*/background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);
-  /*Chrome10-25,Safari5.1-6*/background: linear-gradient(to right, #EF629F, #EECDA3);
-  /*W3C,IE10+/Edge,Firefox16+,Chrome26+,Opera12+,Safari7+*/
+  background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);
+  background: linear-gradient(to right, #EF629F, #EECDA3);
   box-shadow: 1px 1px 5px 1px #ccc;
 }
 
 .memory-cards.flip {
   transform: rotateY(180deg);
- 
+} 
+
+footer {
+  text-transform: uppercase;
+  text-align: center;
+  color: #30e8bf;
+  margin-top: 40px;
+
 }
 
+@media (max-width:640px) and (min-width:320px) {
+  .game-container {
+    width: auto;
+  }
+  .card {
+    width: auto;
+  }
+}
