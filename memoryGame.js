@@ -3,10 +3,10 @@ let isFlipped = false;
 let firstCard, secondCard;
 let time = 100;
 let counter = setInterval(timer, 1000);
-let flip = 0;
+let moves = 0;
 
 
-
+//TODO: add game condition 
 function flipCard() {
     this.classList.toggle('flip');
 
@@ -19,8 +19,10 @@ function flipCard() {
 
         console.log({
             firstCard,
-            secondCard
+            secondCard,
         });
+        moves++;
+        document.getElementById('flips').innerHTML = moves
     }
 }
 
@@ -34,31 +36,40 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 })();
 
 
-function clickCount() {
-    card.addEventListener('click', function () {
-        flip += 1
-        console.log(flip);
-    })
-}
-
 function timer() {
-    time = time - 1;
+    time -= 1;
 
-    if (time < 0) {
+    if (time === 0 || time < 0) {
         clearInterval(counter);
-        return;
+    document.getElementById('game-over-text').classList.add('visible');
     }
     document.getElementById('timer').innerHTML = time;
 
 }
 
+//TODO: click start on overlay text
 function playGame() {
+        let overlays = document.getElementsByClassName('overlay-text');
 
-    // overlays.forEach(overlay => {
-    // overlay.addEventListener('click', () => {
-    //     overlay.classList.remove('visible');
-    // game.startGame();
-    //     });
-    // });
-}
+        overlays.forEach(overlay => {
+            overlay.addEventListener('click', () => {
+                overlays.classList.remove('visible');
+            })
+        })
+    
+        // cards.forEach(card => {
+        //     card.addEventListener('click', () => {
+        //         moves++;
+        //         document.getElementById('flips').innerHTML = moves;
+        //         // game.flipCard(card);
+        //     });
+        // });
+    }
+
 playGame();
+
+function gameOver() {
+    clearInterval(counter);
+    document.getElementById('game-over-text').classList.add('visible');
+    document.getElementById('victory-text').classList.add('visible');
+}
