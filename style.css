@@ -4,19 +4,20 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: width 1s ease-in-out, left 1.5s ease-in-out;
 }
 
 body {
   width: 100%;
   font-family: 'Coiny', cursive;
   height: 100vh;
-  background: grey;
+  background: whitesmoke;
   grid-template-columns: 100%;
   
 }
 
 .container {
-  text-align:center; 
+  text-align: center;
   margin-top: 50px;
   margin-bottom: 15px;
 }
@@ -24,7 +25,8 @@ body {
 .page-title {
   color: #30e8bf;
   font-size: 45px;
-  text-align: center;
+  margin: 0 auto;
+  
  
 }
 .game-info {
@@ -36,7 +38,7 @@ body {
   text-align: center;
 }
 
-/* .overlay-text {
+.overlay-text {
   display: none;
   position: fixed;
   top: 0;
@@ -70,7 +72,7 @@ body {
     background: rgba(0, 0, 0, .8);
     font-size: 10em;
   }
-}  */
+} 
 
 .game-info-container {
   grid-column: 1 / -1;
@@ -81,7 +83,6 @@ body {
 .game-container {
   width: 640px;
   height: 640px;
-  border: 2px solid aquamarine;
    margin: 0 auto; 
 }
 
@@ -129,11 +130,14 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
-.front-face {
+.front-face{
   transform: rotateY(180deg);
-  background: whitesmoke;
+  /* background: whitesmoke; */
+  background: -webkit-linear-gradient(to right, #414345, #232526); 
+  background: linear-gradient(to right, #414345, #232526); 
 
 }
+
 
 .back-face:hover {
   background-position: right center;
@@ -141,25 +145,70 @@ body {
   background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);
   background: linear-gradient(to right, #EF629F, #EECDA3);
   box-shadow: 1px 1px 5px 1px #ccc;
+  color:#3ea8ff
 }
 
 .memory-cards.flip {
   transform: rotateY(180deg);
 } 
 
-footer {
-  text-transform: uppercase;
-  text-align: center;
-  color: #30e8bf;
-  margin-top: 40px;
+.match .back-face {
+  display: none !important;
+ 
+}
+
+.match .front-face {
+  border: 3px solid #30e8bf;
+  animation: infinite blink;
+  animation: blink-1 0.1s both;
+  -webkit-animation: blink-1 0.1s both;
 
 }
 
-@media (max-width:640px) and (min-width:320px) {
+ .disable {
+  display: none !important;
+} 
+
+ @-webkit-keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@media all and (max-width:640px) {
   .game-container {
     width: auto;
   }
   .card {
     width: auto;
   }
+}
+
+footer {
+  text-transform: uppercase;
+  text-align: center;
+  color: #30e8bf;
+  margin-top: 40px;
+  font-size: 12px;
+}
+
+.fa-heart {
+  color: red;
 }
