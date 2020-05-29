@@ -7,7 +7,7 @@ let moves = 0;
 let count = 0;
 let delay = 1200;
 let previousTarget = null;
-let counter = setInterval(timer, 1000);
+// let counter = setInterval(timer, 1000);
 
 //TODO crate start game function that will remove overlay text when game start
 function startGame() {
@@ -20,6 +20,7 @@ function startGame() {
 }
 
 startGame();
+
 // //NOTE: shuffle card
 function shuffleCards() {
     window.addEventListener("load", (event) => {
@@ -32,11 +33,8 @@ function shuffleCards() {
 cards.forEach((card) => card.addEventListener("click", flipCard));
 shuffleCards();
 
-//TODO crate Countdown function that ticking down from 100 seconds to 0 if the timer at 0 then display game over overlay
-// function timer() {
+//flip card and check if the cards are matching
 
-// }
-//TODO create count move function to count how many move user clicked on the card and if all card matches before the time run out than display victory overlay text
 function flipCard() {
     let clicked = event.target;
 
@@ -63,13 +61,14 @@ function flipCard() {
     if (firstGuess && secondGuess) {
         if (firstGuess === secondGuess) {
             setTimeout(checkForMatch(), 1500)
+            disableCards();
             isFlipped = true
         }
         setTimeout(resetGuesses, delay)
     }
     isFlipped = true
-    countMove();
-    timer();
+    // countMove();
+    // timer();
 }
 
 
@@ -79,8 +78,6 @@ function checkForMatch() {
     match.forEach((card) => {
         card.classList.add('match');
     })
-    // let match = firstGuess.dataset.name === secondGuess.dataset.name;
-    // match ?  disableCard() : unMatchCard() 
 }
 
 //TODO if card is not matching than remove 'flip' class
@@ -98,21 +95,18 @@ const resetGuesses = () => {
     });
 };
 
-
-function timer() {
-    time--;
-
-    // if (time <= 0 || time === 0) {
-    //     clearInterval(countdown);
-    //     document.querySelectorAll("overlay-text").classList.add("visible");
-    // }
-    // resetGuesses()
-    // document.getElementById("timer").innerHTML = time;
+function disableCards() {
+   setTimeout(() => {
+    let matched = document.querySelectorAll('.match');
+    matched.forEach(card => {
+        card.classList.add('disable')
+    })
+   }, 2000);
 }
 
-function countMove() {
-    moves++;
-    document.getElementById('flips').innerHTML = moves;
-  
-}
 
+//TODO crate Countdown function that ticking down from 100 seconds to 0 if the timer at 0 then display game over overlay
+// function timer() {
+
+// }
+//TODO create count move function to count how many move user clicked on the card and if all card matches before the time run out than display victory overlay text

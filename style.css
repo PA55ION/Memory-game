@@ -136,7 +136,7 @@ body {
   background: -webkit-linear-gradient(to right, #414345, #232526); 
   background: linear-gradient(to right, #414345, #232526); 
 
-}
+} 
 
 
 .back-face:hover {
@@ -145,7 +145,8 @@ body {
   background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);
   background: linear-gradient(to right, #EF629F, #EECDA3);
   box-shadow: 1px 1px 5px 1px #ccc;
-  color:#3ea8ff
+  color:#3ea8ff;
+
 }
 
 .memory-cards.flip {
@@ -161,11 +162,10 @@ body {
   border: 3px solid #30e8bf;
   animation: infinite blink;
   animation: blink-1 0.1s both;
-  -webkit-animation: blink-1 0.1s both;
-
+  -webkit-animation: blink-1 0.1s both; 
 }
 
- .disable {
+ .disable .front-face {
   display: none !important;
 } 
 
