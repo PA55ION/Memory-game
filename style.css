@@ -135,9 +135,7 @@ body {
   /* background: whitesmoke; */
   background: -webkit-linear-gradient(to right, #414345, #232526); 
   background: linear-gradient(to right, #414345, #232526); 
-
 } 
-
 
 .back-face:hover {
   background-position: right center;
