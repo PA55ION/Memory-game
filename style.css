@@ -131,7 +131,7 @@ body {
 }
 
 .front-face{
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); 
   /* background: whitesmoke; */
   background: -webkit-linear-gradient(to right, #414345, #232526); 
   background: linear-gradient(to right, #414345, #232526); 
@@ -147,6 +147,7 @@ body {
   box-shadow: 1px 1px 5px 1px #ccc;
   color:#3ea8ff;
 
+
 }
 
 .memory-cards.flip {
@@ -155,7 +156,6 @@ body {
 
 .match .back-face {
   display: none !important;
- 
 }
 
 .match .front-face {
