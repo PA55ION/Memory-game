@@ -9,7 +9,6 @@ let delay = 1200;
 let previousTarget = null;
 let countdown;
 
-
 //TODO crate start game function that will remove overlay text when game start
 function startGame() {
     let overlays = [...document.getElementsByClassName("overlay-text")];
@@ -21,10 +20,9 @@ function startGame() {
         });
     });
 }
-
 startGame();
 
-// //NOTE: shuffle card
+//NOTE: shuffle card
 function shuffleCards() {
         cards.forEach((card) => {
             let shuffle = Math.floor(Math.random() * 17);
@@ -35,9 +33,7 @@ cards.forEach((card) => card.addEventListener("click", flipCard));
 shuffleCards();
 
 //flip card and check if the cards are matching
-
 function flipCard() {
-   
     let clicked = event.target;
 
     if (
