@@ -102,10 +102,11 @@ function disableCards() {
 function startCountdown() {
   countdown = setInterval(() => {
       time--;
-      if(time == 0 || time <= 0) {
-          document.getElementById('game-over-text').classList.add('visible');
-      }
       timeCounter.innerHTML = time;
+      if(time == 0 || time < 0) {
+        document.getElementById('game-over-text').classList.add('visible');
+        clearInterval(countdown)
+    }
   }, 1000);
 }
 
@@ -117,7 +118,7 @@ function victory() {
     if(matchedCard.length === 16) {
         clearInterval(countdown);
         document.getElementById('victory-text').classList.add('visible');
-        console.log('all card had matched')
+        console.log('all cards had matched');
     }
 }
 
